@@ -1,0 +1,47 @@
+name: C/C++ Windows Build CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # MSBuild Installation (falls benötigt, z.B. in Visual Studio Projekten)
+    - name: Set up MSBuild
+      uses: microsoft/setup-msbuild@v1.0.2
+
+    # Visual Studio für C++ Entwicklung einrichten
+    - name: Set up Visual Studio
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '6.x' # Installiere das .NET SDK, um MSBuild und Visual Studio zu unterstützen
+
+    # Installiere C++ Build-Tools und Visual Studio
+    - name: Install MSVC Build Tools
+      run: |
+        choco install visualstudio2022buildtools --package-parameters "--add Microsoft.VisualStudio.Workload.VCTools --includeRecommended --includeOptional --quiet --wait"
+    
+    # Build Schritt mit MSBuild
+    - name: Build with MSBuild
+      run: |
+        msbuild /p:Configuration=Release /p:Platform=x64 your-project.sln
+
+    # Optional: Unit Tests (Wenn Unit Tests vorhanden sind)
+    - name: Run Unit Tests
+      run: |
+        vstest.console.exe path\to\testproject.dll
+
+    # Optional: Build-Artefakte hochladen (z.B. Exe-Datei)
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: Windows-Build
+        path: path\to\output\files
