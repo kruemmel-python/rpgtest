@@ -1,23 +1,23 @@
-# RPG Konsolenspiel
+# RPG Konsolenspiel 
 
-Dies ist ein einfaches RPG-Spiel, das in C++ erstellt wurde. Das Spiel bietet dem Spieler die Möglichkeit, eine Klasse zu wählen, gegen zufällige Gegner zu kämpfen, Fähigkeiten zu verbessern und Erfahrungspunkte zu sammeln, um im Level aufzusteigen.
+Dies ist ein einfaches RPG-Spiel, das in C++ erstellt wurde. Das Spiel bietet dem Spieler die MÃ¶glichkeit, eine Klasse zu wÃ¤hlen, gegen zufÃ¤llige Gegner zu kÃ¤mpfen, FÃ¤higkeiten zu verbessern und Erfahrungspunkte zu sammeln, um im Level aufzusteigen.
 
-## Spielübersicht
+## SpielÃ¼bersicht
 
-Der Spieler kann eine von drei Klassen wählen:
+Der Spieler kann eine von drei Klassen wÃ¤hlen:
 - **Krieger**
 - **Magier**
-- **Bogenschütze**
+- **BogenschÃ¼tze**
 
-Jede Klasse hat einzigartige Fähigkeiten und kann Tränke (Heiltränke, Manatränke) im Spiel verwenden. Der Spieler kämpft gegen zufällige Gegner, die ebenfalls verschiedene Gegenstände und Tränke fallen lassen können. 
+Jede Klasse hat einzigartige FÃ¤higkeiten und kann TrÃ¤nke (HeiltrÃ¤nke, ManatrÃ¤nke) im Spiel verwenden. Der Spieler kÃ¤mpft gegen zufÃ¤llige Gegner, die ebenfalls verschiedene GegenstÃ¤nde und TrÃ¤nke fallen lassen kÃ¶nnen. 
 
 ### Funktionen
-- **Klassenwahl**: Der Spieler wählt am Anfang eine Klasse aus.
-- **Kampfsystem**: Der Spieler kann Gegner angreifen, Fähigkeiten einsetzen und sich heilen.
-- **Regeneration**: Der Spieler regeneriert HP und Mana außerhalb des Kampfes.
-- **Level-Up-System**: Der Spieler erhält Erfahrungspunkte (XP) durch das Besiegen von Gegnern und kann im Level aufsteigen, wodurch HP und Mana erhöht werden.
-- **Inventar**: Der Spieler kann verschiedene Gegenstände und Tränke sammeln und verwenden.
-- **Speichern und Laden**: Der Spieler kann den Fortschritt im Spiel speichern und später wieder laden.
+- **Klassenwahl**: Der Spieler wÃ¤hlt am Anfang eine Klasse aus.
+- **Kampfsystem**: Der Spieler kann Gegner angreifen, FÃ¤higkeiten einsetzen und sich heilen.
+- **Regeneration**: Der Spieler regeneriert HP und Mana auÃŸerhalb des Kampfes.
+- **Level-Up-System**: Der Spieler erhÃ¤lt Erfahrungspunkte (XP) durch das Besiegen von Gegnern und kann im Level aufsteigen, wodurch HP und Mana erhÃ¶ht werden.
+- **Inventar**: Der Spieler kann verschiedene GegenstÃ¤nde und TrÃ¤nke sammeln und verwenden.
+- **Speichern und Laden**: Der Spieler kann den Fortschritt im Spiel speichern und spÃ¤ter wieder laden.
 
 ## Installationsanweisungen
 
@@ -25,52 +25,52 @@ Jede Klasse hat einzigartige Fähigkeiten und kann Tränke (Heiltränke, Manatränke
    ```bash
    git clone https://github.com/Benutzername/rpgtest.git
    ```
-2. **Öffnen des Projekts in Visual Studio**: Das Spiel wurde mit Visual Studio entwickelt und kann dort geöffnet und kompiliert werden.
-3. **Compilieren und Ausführen**:
-   - Öffne die Projektdatei `rpgtest.sln` in Visual Studio.
-   - Führe das Projekt über Visual Studio aus oder kompiliere und führe es manuell über die Kommandozeile mit einem C++-Compiler.
+2. **Ã–ffnen des Projekts in Visual Studio**: Das Spiel wurde mit Visual Studio entwickelt und kann dort geÃ¶ffnet und kompiliert werden.
+3. **Compilieren und AusfÃ¼hren**:
+   - Ã–ffne die Projektdatei `rpgtest.sln` in Visual Studio.
+   - FÃ¼hre das Projekt Ã¼ber Visual Studio aus oder kompiliere und fÃ¼hre es manuell Ã¼ber die Kommandozeile mit einem C++-Compiler.
 
 ## Spielsteuerung
 
-- Das Spiel wird über das Konsolenfenster gesteuert.
-- Der Spieler wird durch Menüs navigiert und gibt die Nummer der gewünschten Aktion ein.
+- Das Spiel wird Ã¼ber das Konsolenfenster gesteuert.
+- Der Spieler wird durch MenÃ¼s navigiert und gibt die Nummer der gewÃ¼nschten Aktion ein.
 - Aktionen im Spiel:
   - **1**: Statistiken anzeigen (zeigt HP, Mana, Level und XP).
-  - **2**: Fähigkeiten anzeigen.
-  - **3**: Fähigkeit verbessern.
+  - **2**: FÃ¤higkeiten anzeigen.
+  - **3**: FÃ¤higkeit verbessern.
   - **4**: Inventar anzeigen.
-  - **5**: Abenteuer fortsetzen (dies startet einen Kampf mit einem zufälligen Gegner).
+  - **5**: Abenteuer fortsetzen (dies startet einen Kampf mit einem zufÃ¤lligen Gegner).
   - **6**: Spiel speichern.
   - **7**: Spiel beenden.
 
-## Beispiel für das Spiel
+## Beispiel fÃ¼r das Spiel
 
 ```bash
-Möchtest du ein neues Spiel starten oder ein gespeichertes Spiel laden?
+MÃ¶chtest du ein neues Spiel starten oder ein gespeichertes Spiel laden?
 1. Neues Spiel
 2. Spiel laden
 
-Wähle deine Klasse: Krieger, Magier, Bogenschütze: Krieger
+WÃ¤hle deine Klasse: Krieger, Magier, BogenschÃ¼tze: Krieger
 
-Was möchtest du tun?
+Was mÃ¶chtest du tun?
 1. Statistiken anzeigen
-2. Fähigkeiten anzeigen
-3. Fähigkeit verbessern
+2. FÃ¤higkeiten anzeigen
+3. FÃ¤higkeit verbessern
 4. Inventar anzeigen
 5. Abenteuer fortsetzen
 6. Spiel speichern
 7. Spiel beenden
 ```
 
-### Beispiel für einen Kampf:
+### Beispiel fÃ¼r einen Kampf:
 
 ```bash
 Du triffst auf einen Goblin!
 Kampf gegen Goblin beginnt!
 
-Was möchtest du tun?
+Was mÃ¶chtest du tun?
 1. Angreifen
-2. Fähigkeit einsetzen
+2. FÃ¤higkeit einsetzen
 3. Heilen
 4. Info Gegner
 ```
@@ -78,17 +78,17 @@ Was möchtest du tun?
 ## Dateien
 
 - `main.cpp`: Die Hauptdatei des Spiels, die die Spielmechanik implementiert.
-- `items.csv`: Eine CSV-Datei mit einer Liste von zufälligen Gegenständen und Tränken, die von Gegnern fallen gelassen werden.
+- `items.csv`: Eine CSV-Datei mit einer Liste von zufÃ¤lligen GegenstÃ¤nden und TrÃ¤nken, die von Gegnern fallen gelassen werden.
 - `saved_game.txt`: Eine Textdatei, in der der Spielfortschritt gespeichert wird.
 
-## Erweiterungsmöglichkeiten
+## ErweiterungsmÃ¶glichkeiten
 
-- **Neue Klassen**: Füge weitere Klassen wie Paladin oder Assassine hinzu.
-- **Mehr Fähigkeiten**: Erweitere die Fähigkeiten jeder Klasse.
-- **Mehr Gegner**: Implementiere zusätzliche Gegner mit unterschiedlichen Eigenschaften.
-- **Komplexere Storyline**: Füge eine Story hinzu, die den Spieler durch verschiedene Quests führt.
+- **Neue Klassen**: FÃ¼ge weitere Klassen wie Paladin oder Assassine hinzu.
+- **Mehr FÃ¤higkeiten**: Erweitere die FÃ¤higkeiten jeder Klasse.
+- **Mehr Gegner**: Implementiere zusÃ¤tzliche Gegner mit unterschiedlichen Eigenschaften.
+- **Komplexere Storyline**: FÃ¼ge eine Story hinzu, die den Spieler durch verschiedene Quests fÃ¼hrt.
 
 ## Lizenz
 
-Dieses Projekt steht unter der MIT-Lizenz. Siehe die `LICENSE`-Datei für weitere Details.
+Dieses Projekt steht unter der MIT-Lizenz. Siehe die `LICENSE`-Datei fÃ¼r weitere Details.
 
