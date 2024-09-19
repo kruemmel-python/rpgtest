@@ -36,7 +36,7 @@ std::pair<std::string, std::string> loadRandomItemsFromCSV(const std::string& fi
     }
 
     // Zufällige Auswahl eines Gegenstands und eines Tranks
-    std::srand(std::time(0));
+    std::srand(static_cast<unsigned int>(std::time(0)));
     int randomIndex = std::rand() % items.size();
     return items[randomIndex];
 }
@@ -411,7 +411,7 @@ void simulateJourney() {
 // Funktion zum Erstellen eines zufälligen Gegners
 Enemy generateRandomEnemy() {
     std::vector<std::string> enemyNames = { "Goblin", "Orc", "Troll", "Bandit", "Drachenling" };
-    std::srand(std::time(0));
+    std::srand(static_cast<unsigned int>(std::time(0)));
     std::string randomName = enemyNames[std::rand() % enemyNames.size()];
     int randomHP = 20 + std::rand() % 100;  // HP zwischen 20 und 120
     int randomXP = 10 + std::rand() % 50;   // XP zwischen 10 und 60
@@ -422,9 +422,15 @@ Enemy generateRandomEnemy() {
 }
 
 // Kampfmechanik
+// Kampfmechanik
 void fight(Player& player, Enemy& enemy) {
     std::cout << "\nKampf gegen " << enemy.name << " beginnt!\n";
+
     while (player.hp > 0 && enemy.isAlive()) {
+        // Testausgabe: Status von Spieler und Gegner vor dem Zug
+        std::cout << "Spieler HP: " << player.hp << "/" << player.maxHP << "\n";
+        std::cout << "Gegner HP: " << enemy.hp << "\n";
+
         std::cout << "\nWas möchtest du tun?\n1. Angreifen\n2. Fähigkeit einsetzen\n3. Heilen\n4. Info Gegner\n";
         int action;
         std::cin >> action;
@@ -438,7 +444,6 @@ void fight(Player& player, Enemy& enemy) {
         else if (action == 3) {
             player.heal();
         }
-        // Neue Option, um Gegnerinformationen anzuzeigen
         else if (action == 4) {
             enemy.showInfo();  // Zeigt die Informationen des Gegners an
         }
@@ -447,8 +452,13 @@ void fight(Player& player, Enemy& enemy) {
             continue;
         }
 
+        // Testausgabe: Status nach Spieleraktion
+        std::cout << "Nach Spieleraktion - Spieler HP: " << player.hp << "/" << player.maxHP << ", Gegner HP: " << enemy.hp << "\n";
+
         if (enemy.isAlive()) {
             enemy.attackPlayer(player.hp, player.defenseBoost);
+            // Testausgabe: Status nach Gegnerangriff
+            std::cout << "Nach Gegneraktion - Spieler HP: " << player.hp << "/" << player.maxHP << ", Gegner HP: " << enemy.hp << "\n";
         }
     }
 
@@ -458,7 +468,13 @@ void fight(Player& player, Enemy& enemy) {
         player.addItemToInventory(enemy.itemDrop);
         player.addItemToInventory(enemy.potionDrop);
     }
+    else {
+        std::cout << "Der Spieler wurde besiegt.\n";  // Zusätzliche Nachricht, falls der Spieler verliert
+    }
+
+    std::cout << "Kampf beendet.\n";  // Testausgabe am Ende des Kampfes
 }
+
 
 // Funktion zur Spielerklassenauswahl
 std::string chooseClass() {
@@ -482,6 +498,9 @@ int main() {
 
     std::string playerClass;
     Player* player = nullptr;
+
+    // Zufallsgenerator nur einmal in main aufrufen
+    std::srand(static_cast<unsigned int>(std::time(0)));
 
     std::cout << "Möchtest du ein neues Spiel starten oder ein gespeichertes Spiel laden?\n";
     std::cout << "1. Neues Spiel\n2. Spiel laden\n";
@@ -535,11 +554,18 @@ int main() {
         }
         else if (menuChoice == 5) {
             // Spieler bewegt sich in der Welt
-            simulateJourney();
+            simulateJourney();  // Bewegung simulieren
+
+            // Testausgabe: Überprüfe, ob die Reise abgeschlossen ist
+            std::cout << "Abenteuer fortgesetzt, jetzt kommt der Kampf!\n";
 
             // Zufälligen Gegner erstellen und Kampf starten
             Enemy randomEnemy = generateRandomEnemy();
-            fight(*player, randomEnemy);
+
+            // Testausgabe: Gegnerdetails vor dem Kampf
+            std::cout << "Gegner erstellt: " << randomEnemy.name << " mit " << randomEnemy.hp << " HP\n";
+
+            fight(*player, randomEnemy);  // Kampf starten
         }
         else if (menuChoice == 6) {
             player->saveGame("saved_game.txt");
@@ -559,4 +585,5 @@ int main() {
     std::cout << "Spiel beendet.\n";
     return 0;
 }
+
 

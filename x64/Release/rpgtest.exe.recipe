@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>C:\Users\ralfk\Documents\c++ Lerninhalte\rpgtest\x64\Release\rpgtest.exe</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles>
+    <ContentFile>
+      <FullPath>C:\Users\ralfk\Documents\c++ Lerninhalte\rpgtest\x64\Release\items.csv</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\ralfk\Documents\c++ Lerninhalte\rpgtest\x64\Release\saved_game.txt</FullPath>
+    </ContentFile>
+  </ContentFiles>
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

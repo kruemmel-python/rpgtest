@@ -21,6 +21,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="items.csv" />
+<<<<<<< HEAD
+    <None Include="README.md" />
+=======
+>>>>>>> c1e163592d92a5ccd8b39073c414b93ff7b7dfd0
   </ItemGroup>
   <ItemGroup>
     <Text Include="saved_game.txt" />
